@@ -20,5 +20,6 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'', include('boodlerunner.urls'))
+    url(r'', include('boodlerunner.urls')),
+
 ]
