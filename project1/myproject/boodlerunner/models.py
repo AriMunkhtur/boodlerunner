@@ -16,6 +16,7 @@ class boodleRunner(models.Model):
 	runnerBarracks = models.CharField(max_length=10)
 	runnerCompany = models.CharField(max_length=2)
 
+
 class boodleRequest(models.Model):
 	id = models.CharField(max_length=50,primary_key=True)
 	receiverID = models.ForeignKey(boodleReceiver, on_delete=models.CASCADE)
