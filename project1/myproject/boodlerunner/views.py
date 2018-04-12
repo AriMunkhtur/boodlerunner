@@ -51,13 +51,7 @@ def loginPage(request):
 		form =LoginForm()
 		return render(request, 'boodlerunner/order.html',{'form':form})
 
-def post_treasure(request):
-	form = TreasureForm(request.POST)
-	if form.is_valid():
-		treasure = form.save(commit = False)
-		treasure.user=request.user
-		treasure.save()
-	return HttpResponseRedirect('/')
+
 
 #def post_boodleReceiverInfo(request):
 #	form = boodleReceiverForm(request.POST)

@@ -3,8 +3,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to BoodleRunner</title>
+    <title>Welcome to BoodleRunner!</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
     {% load staticfiles %}
 </head>
 
@@ -12,20 +13,28 @@
 
 {% block body %}
 
+
+
   <div class="container">
-    <h2>Welcome to Boodle Runner</h2>
+    <br>
+    <br>
+    <br>
+    <h2 class = "text-center">Welcome to Boodle Runner!</h2>
+    <br>
+    <br>
+    <br>
     <form method="post" novalidate>
       {% csrf_token %}
       {{ form.as_p }}
-      <button type="submit" class="btn btn-default"><a href="{% url 'signup' %}">Create an account</a></button>
-      <button type="submit" class="btn btn-default"><a href="{% url 'login' %}">Login</a></button>
+      <button type="submit" class="btn-Large btn btn-warning btn-lg"><a href="{% url 'signup' %}"><strong>Create an account</strong></a></button>
+      <button type="submit" class="btn btn-warning btn-lg pull-right"><a href="{% url 'login' %}"><strong>Login</strong></a></button>
     </form>
-<form method="post" action="."> 
+<!--<form method="post" class="text-center" action="."> 
   {% csrf_token %}
   {{ form.as_p }}
   <input type="submit" value="Submit">
 
-  </form>
+</form> -->
 
 
   </div>
