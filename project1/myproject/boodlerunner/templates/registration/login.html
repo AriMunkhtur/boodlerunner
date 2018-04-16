@@ -8,6 +8,8 @@
     {% load staticfiles %}
 </head>
 <body class="body" style="background-color:#DCDCDC	">
+  <div class="container">
+    <div class="login">
 {% block content %}
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
@@ -44,4 +46,6 @@
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
 
 {% endblock %}
+</div>
+</div>
 </body>>

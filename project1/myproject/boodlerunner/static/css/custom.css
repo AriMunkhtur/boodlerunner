@@ -6,3 +6,13 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+.login {
+	padding: 250px 250px;
+  border: 50 none;
+  font-weight; 700;
+  font-size: 22px
+  letter-spacing: 1px;
+  text-align: center;
+vertical-align: middle;
+}
