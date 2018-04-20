@@ -15,3 +15,10 @@ class boodleReceiverForm(forms.Form):
 class LoginForm(forms.Form):
 	username = forms.CharField(label="User Name",max_length=15)
 	password = forms.CharField(widget=forms.PasswordInput())
+
+
+class boodleRunnerForm(forms.Form):
+	runnerName = forms.CharField(label='Name',max_length=50)
+	runnerPhoneNumber = forms.IntegerField(label='Phone Number')
+	runnerBarracks = forms.CharField(label='Barracks',max_length=10)
+	runnerCompany = forms.CharField(label='Company', max_length=2)
