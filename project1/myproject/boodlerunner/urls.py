@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^login/$', views.loginPage, name='login'),
     url(r'^order/$', views.order, name='order'),
     url(r'^menu/$', views.menu, name='menu'),
-url(r'^runner/$', views.updateRunner, name='runner'),
+	url(r'^runner/$', views.updateRunner, name='runner'),
+	url(r'^receipt/$', views.get_order, name='receipt'),
 ]
