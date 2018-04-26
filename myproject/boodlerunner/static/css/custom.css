@@ -1,0 +1,31 @@
+.btn-Large {
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight; 700;
+  font-size: 22px
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.login {
+	padding: 250px 250px;
+  border: 50 none;
+  font-weight; 700;
+  font-size: 22px
+  letter-spacing: 1px;
+  text-align: center;
+vertical-align: middle;
+}
+
+.center {
+    margin: auto;
+	text-align: center;
+	border-color: green;
+    width: 50%;
+    padding: 10px;
+}
+
+.loading-image {
+display:block;
+margin: 0 auto;
+}

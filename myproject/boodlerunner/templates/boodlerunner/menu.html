@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+    {% load staticfiles %}
+
+</head>
+
+<body>
+<body class="body" style="background-color:#DCDCDC	">
+<br>
+<br>
+<h1 class="text-center">CHOOSE YOUR DESITUNY!!!!!!</h1>
+<br>
+<br>
+<br>
+<br>
+  <div class="container">
+
+      <button type="submit" class="btn-Large btn btn-warning btn-lg"><a href="{% url 'order' %}">ORDER FOOD</a></button>
+      <button type="submit" class="btn btn-warning btn-lg pull-right"><a href="{% url 'runner' %}">DELIVER FOOOD</a></button>
+
+  </div>
+
+
+
+</body>
+</html>

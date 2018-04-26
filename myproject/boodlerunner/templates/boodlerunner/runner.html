@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to BoodleRunner</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    {% load staticfiles %}
+</head>
+
+<body class="body" style="background-color:#DCDCDC	">
+
+	<div class="container text-center">
+		<div class='col-lg-4'>
+		<form action="order/" method="post">
+  		{% csrf_token %}
+  		{{ form.as_p }}
+  		<input type="submit" value="submit" />
+		</form>
+	</div>
+	</div>
+    </body>
+</html>
