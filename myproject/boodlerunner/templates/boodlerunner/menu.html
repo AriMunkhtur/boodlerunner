@@ -5,13 +5,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+    {% load staticfiles %}
 
 </head>
 
 <body>
 <body class="body" style="background-color:#DCDCDC	">
-<h1>CHOOSE YOUR DESITUNY!!!!!!</h1>
-
+<br>
+<br>
+<h1 class="text-center">You want to...</h1>
+<br>
+<br>
+<br>
+<br>
   <div class="container">
 
       <button type="submit" class="btn-Large btn btn-warning btn-lg"><a href="{% url 'order' %}">ORDER FOOD</a></button>

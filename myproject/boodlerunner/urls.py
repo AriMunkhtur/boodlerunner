@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^order/$', views.order, name='order'),
     url(r'^menu/$', views.menu, name='menu'),
 	url(r'^runner/$', views.updateRunner, name='runner'),
-	url(r'^receipt/$', views.receipt, name='receipt'),
+	url(r'^reciept/$', views.reciept, name='reciept')
 ]

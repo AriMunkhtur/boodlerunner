@@ -1,5 +1,5 @@
 {% load static %}
-{% load crispy_forms_tags %}
+
 <head>
     <meta charset="UTF-8">
     <title>Welcome to BoodleRunner</title>
@@ -26,8 +26,7 @@
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
-{{form|crispy}}
-<!--
+
 <div>
   <td>{{ form.username.label_tag }}</td>
   <td>{{ form.username }}</td>
@@ -36,7 +35,7 @@
   <td>{{ form.password.label_tag }}</td>
   <td>{{ form.password }}</td>
 </div>
--->
+
 <div>
   <input type="submit" value="login" />
   <input type="hidden" name="next" value="{{ next }}" />

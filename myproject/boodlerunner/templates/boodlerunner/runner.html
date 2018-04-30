@@ -1,6 +1,4 @@
 {% load static %}
-{% load crispy_forms_tags %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +12,9 @@
 
 	<div class="container text-center">
 		<div class='col-lg-4'>
-		<form action="runner/" method="post">
+		<form action="order/" method="post">
   		{% csrf_token %}
-  		{{ form| crispy}}
+  		{{ form.as_p }}
   		<input type="submit" value="submit" />
 		</form>
 	</div>

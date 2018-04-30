@@ -72,11 +72,10 @@ def post_treasure(request):
 		treasure.save()
 	return HttpResponseRedirect('/')
 
+def reciept(request):
+	return render(request, 'boodlerunner/reciept.html')
 
-def receipt(request):
-	return render(request, 'boodlerunner/receipt.html', {})
 
-	
 #def post_boodleReceiverInfo(request):
 #	form = boodleReceiverForm(request.POST)
 #	if form.is_valid():
