@@ -9,14 +9,13 @@
 </head>
 
 <body class="body" style="background-color:#DCDCDC	">
-{% load crispy_forms_tags %}
+
 	<div class="container text-center">
-		<div class='col-md-3'>
-		<form action="/receipt/" method="post">
+		<div class='col-lg-4'>
+		<form action="order/" method="post">
   		{% csrf_token %}
-      {{form|crispy}}
-  		<!--{{ form.as_p }} -->
-  		<input class="btn btn-warning btn-lg pull-right"   type="submit" value="submit info and confirm runner" /><a href="{% url 'receipt' %}">
+  		{{ form.as_p }}
+      <button type="submit" class="btn btn-warning btn-lg pull-right"><a href="{% url 'reciept' %}">Submit order and confirm number</a></button>
 		</form>
 	</div>
 	</div>
