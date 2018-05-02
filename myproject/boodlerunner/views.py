@@ -5,6 +5,8 @@ from django.http import HttpResponse
 from .forms import LoginForm
 from .forms import boodleReceiverForm
 from .forms import boodleRunnerForm
+from django.http import HttpResponseRedirect
+from .models import boodleReceiver
 
 
 def welcome(request):
@@ -15,19 +17,7 @@ def welcome(request):
 def menu(request):
 	return render(request, 'boodlerunner/menu.html', {})
 
-def order(request):
-	form = boodleReceiverForm(request.POST  or None)
-	if form.is_valid():
-		receiverInfo  = boodleReceiver(name = forms.cleaned_data['name'],
-										phoneNumber  = forms.cleaned_data['phone number'],
-										barracks =   forms.cleaned_data['barracks'],
-										roomNumber =   forms.cleaned_data['room number'],
-										restaurant =   forms.cleaned_data['restaurant'],
-										timeOfArrival =   forms.cleaned_data['time of arrival'],
-										additionalInstruction =   forms.cleaned_data['additional instruction'],
-										receiverCompany = forms.cleaned_data['company'],)
-		receiverInfo.save()
-	return render(request,'boodlerunner/order.html',{'form': form})
+
 
 
 def updateRunner(request):
@@ -64,28 +54,29 @@ def loginPage(request):
 		form =LoginForm()
 		return render(request, 'boodlerunner/order.html',{'form':form})
 
-def post_treasure(request):
-	form = TreasureForm(request.POST)
+
+def receipt(request, order_id):
+	orders = boodleReceiver.objects.all()
+	form = boodleReceiverForm()
+	return render(request, 'boodlerunner/receipt.html', {'orders':orders, 'form':form})
+
+
+def order(request):
+	orders = boodleReceiver.objects.all()
+	form = boodleReceiverForm()
+	return render(request,'boodlerunner/order.html',{'orders':orders,'form':form})
+
+
+def post_order(request):
+	form = boodleReceiverForm(request.POST)
 	if form.is_valid():
-		treasure = form.save(commit = False)
-		treasure.user=request.user
-		treasure.save()
-	return HttpResponseRedirect('/')
-
-def reciept(request):
-	return render(request, 'boodlerunner/reciept.html')
-
-
-#def post_boodleReceiverInfo(request):
-#	form = boodleReceiverForm(request.POST)
-#	if form.is_valid():
-#		receiverInfo  = boodleReceiver(name = forms.cleaned_data['name'],
-#										phoneNumber  = forms.cleaned_data['phone number'],
-#										barracks =  = forms.cleaned_data['barracks'],
-#										roomNumber =  = forms.cleaned_data['room number'],
-#										restaurant =  = forms.cleaned_data['restaurant'],
-#										timeOfArrival =  = forms.cleaned_data['time of arrival'],
-#										additionalInstruction =  = forms.cleaned_data['additional instruction'],
-#										receiverCompany = f = forms.cleaned_data['company'],)
-#		receiverInfo.save()
-#	return HttpResponseRedirect('boodlerunner/welcome.html')
+		receiverInfo  = boodleReceiver(name = form.cleaned_data['name'],
+										phoneNumber = form.cleaned_data['phoneNumber'],
+										barracks =   form.cleaned_data['barracks'],
+										roomNumber =  form.cleaned_data['roomNumber'],
+										restaurant =  form.cleaned_data['restaurant'],
+										timeOfArrival =   form.cleaned_data['timeOfArrival'],
+										additionalInstruction =   form.cleaned_data['additionalInstruction'],
+										receiverCompany =   form.cleaned_data['receiverCompany'],)
+		receiverInfo.save()
+	return HttpResponseRedirect('boodlerunner/receipt.html')

@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -8,5 +9,5 @@ urlpatterns = [
     url(r'^order/$', views.order, name='order'),
     url(r'^menu/$', views.menu, name='menu'),
 	url(r'^runner/$', views.updateRunner, name='runner'),
-	url(r'^reciept/$', views.reciept, name='reciept')
+	url(r'^post_url/$', views.post_order, name='receipt'),
 ]
