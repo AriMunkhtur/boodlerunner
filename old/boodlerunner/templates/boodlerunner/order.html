@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to BoodleRunner</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    {% load staticfiles %}
+</head>
+
+<body class="body" style="background-color:#DCDCDC	">
+{% load crispy_forms_tags %}
+<br>
+    <br><br>
+    <br>
+	<div class="container panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"> Add order now</h3>
+    </div>
+    <div class='col-md-3'>
+		<form action="/receipt/" method="post">
+  		{% csrf_token %}
+      {{form|crispy}}
+  		<!--{{ form.as_p }} -->
+  		<input class="btn btn-warning btn-lg "   type="submit" value="submit and get receipt" /><a href="{% url 'receipt' %}">
+
+		</form>
+	</div>
+	</div>
+    </body>
+</html>
