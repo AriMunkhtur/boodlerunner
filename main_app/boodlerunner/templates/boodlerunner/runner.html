@@ -20,7 +20,7 @@
   <div class='col-md-3'>
 	 <div class="container text-center">
 		<div class='col-lg-4'>
-		 <form action="runner/" method="post">
+		 <form action="/updateReceiver/" method="post">
   		{% csrf_token %}
   		{{ form| crispy}}
   		<input type="submit" value="submit" />

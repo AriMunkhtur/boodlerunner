@@ -1,0 +1,7 @@
+
+<ol>
+{% for delivery in orders %}
+  <li>{{delivery.receiver.name}}, {{deivery.restaurant}}, {{delivery.additionalInstruction}}</li>
+{% endfor %}
+
+</ol>
